@@ -57,11 +57,11 @@ public class A_AddFriend extends HttpServlet {
 	
 	//en local
 	
-	String res = post.substring(39);
+	//String res = post.substring(39);
 	
 	//en ligne 
 	
-	//String res = post.substring(57);
+	String res = post.substring(57);
 
 	
 	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();

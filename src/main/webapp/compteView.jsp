@@ -114,7 +114,7 @@
 		            	<hr>
 		            	<div class="card" style="padding-bottom : 12px;">
 		            		<!--  <b>${post.key}</b> -->
-		            		<a style="color : black;" href="/searchuser(${post.value[1]})"><b>${post.value[1]}</b></a>
+		            		<b>${post.value[1]}</b>
 		                </div>
 		                
 		                <div class="card" style="padding-bottom : 12px;">

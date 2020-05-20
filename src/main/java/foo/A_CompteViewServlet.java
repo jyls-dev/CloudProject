@@ -115,20 +115,19 @@ public class A_CompteViewServlet extends HttpServlet {
 			
 		}
 		
-		
 		for(Entity entityPost: resultatPost) {
-			if(!(entityPost.getProperty("owner").equals(user))) {
+			//if(!(entityPost.getProperty("owner").equals(user))) {
 				if (FriendUser != null) {
 					for (int a = 0; a < FriendUser.size(); a++) {
 					
-						if(entityPost.getProperty("owner").equals(FriendUser.get(a))) {
+						if(entityPost.getProperty("owner").equals(FriendUser.get(a))||(entityPost.getProperty("owner").equals(user))) {
 							List<String> post = new ArrayList<>();
 							post.add((String)entityPost.getProperty("url"));
 							post.add((String)entityPost.getProperty("owner"));
 							post.add((String)entityPost.getProperty("body"));
 							post.add((String)entityPost.getProperty("date").toString());
 							post.add((String)entityPost.getProperty("likec").toString());
-							
+							listePosts.put(entityPost.getKey().getId(), post);
 							
 							if(postLiked.size() != 0) {
 								
@@ -143,26 +142,17 @@ public class A_CompteViewServlet extends HttpServlet {
 									} 
 									
 								}
-							
-							
+								
 							}
 							
-							
-							listePosts.put(entityPost.getKey().getId(), post);
-							/* resp.getWriter().print("<li> TEST ICI PRESENT :" + listePosts);  */
-								
-							
-								
 						}
 					}
 							
 				}				
 				
-			}
+			//}
 		}
 		
-		
-
 		
 		/********************* Commentaire *******************************/
 				
@@ -174,6 +164,7 @@ public class A_CompteViewServlet extends HttpServlet {
 		HashMap<Long, List<String>> listeCommentC = new HashMap<Long, List<String>>();
 		
 		for(Entity entityPost: resultatPost) {
+			
 			
 			
 			for(Entity entityComment : resultatComment) {
@@ -196,28 +187,6 @@ public class A_CompteViewServlet extends HttpServlet {
 							
 		}
 		
-		/********************* Pour le changement de couleur du like *******************************/
-		
-		/*Query qLike = new Query("Friend").setFilter(new FilterPredicate("lastName", FilterOperator.EQUAL, user));
-		PreparedQuery pqqLike = datastore.prepare(qLike);
-		List<Entity> resultatLike = pqq.asList(FetchOptions.Builder.withDefaults());
-		
-		List<String> listLike = new ArrayList<String>();
-		List<String> postLiked = new ArrayList<String>();
-		
-		for (Entity entityLike : resultatLike) {
-			postLiked = (ArrayList<String>) entityLike.getProperty("LikedPost");
-		}
-		
-		for(String element : postLiked) {
-			listLike.add((String) element);
-		}
-		
-		
-		resp.getWriter().print("TEST ICI PRESENT :" + postLiked); 
-		resp.getWriter().print("TEST ICI PRESENT :" + listLike); 
-		req.setAttribute("listeLike", listLike);
-		*/
 		req.setAttribute("listeUsers", listesUser);
 		req.setAttribute("listePosts", listePosts);
 		req.setAttribute("listeCommentC", listeCommentC);

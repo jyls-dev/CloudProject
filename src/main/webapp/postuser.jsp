@@ -41,14 +41,6 @@
 
 					<div class="profile">
 
-						<c:forEach items="${infoUser}" var="itemUser">
-						
-						<c:if test="${itemUser.value[0] eq 'null'}">
-								<%
-									RequestDispatcher rd = request.getRequestDispatcher("/view");
-										rd.forward(request, response);
-								%>
-						</c:if>
 
 						<div class="profile-image">
 
@@ -56,26 +48,16 @@
 
 						</div>
 
-						
+						<c:forEach items="${infoUser}" var="itemUser">
 							<div class="profile-user-settings">
-	
+
 
 								<h1 class="profile-user-name">${itemUser.value[0]}</h1>
-								<br> <a href="/view"><button class="btn-success btn-lg">Revenir
-										à la Timeline</button></a>
-										<a href="/addFriend/ + ${itemUser.value[1]}"  class="btn btn-primary">Follow2</a>
+								 <a href="/view"><button class="btn-success btn-lg">Revenir à la Timeline</button></a>
+								<button class="btn-primary btn-lg">Follow</button>
 
 							</div>
 
-							<div class="profile-stats" style="padding-top: 3rem;">
-
-								<ul>
-									<li><span class="profile-stat-count">164</span> posts</li>
-									<li><span class="profile-stat-count">188</span> followers</li>
-									<li><span class="profile-stat-count">206</span> following</li>
-								</ul>
-
-							</div>
 					</div>
 					<!-- End of profile section -->
 
@@ -92,9 +74,16 @@
 
 					<div class="gallery">
 
+						<%
+							int valeur = 0;
+						%>
 
 						<c:forEach items="${listPost}" var="infoPost">
 
+
+							<%
+								valeur = valeur + 1;
+							%>
 
 							<div class="gallery-item" tabindex="0">
 
@@ -104,19 +93,6 @@
 
 									<span class="visually-hidden">Video</span><i
 										class="fas fa-video" aria-hidden="true"></i>
-
-								</div>
-
-								<div class="gallery-item-info">
-
-									<ul>
-										<li class="gallery-item-likes"><span
-											class="visually-hidden">Likes:</span><i class="fas fa-heart"
-											aria-hidden="true"></i> 56</li>
-										<li class="gallery-item-comments"><span
-											class="visually-hidden">Comments:</span><i
-											class="fas fa-comment" aria-hidden="true"></i> 2</li>
-									</ul>
 
 								</div>
 

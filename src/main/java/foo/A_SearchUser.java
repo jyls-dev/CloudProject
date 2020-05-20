@@ -48,18 +48,18 @@ public class A_SearchUser extends HttpServlet {
 		Integer compteur = 0;
 		String url = "/view";
 		
-		StringBuffer lastName = request.getRequestURL();
+		//StringBuffer lastName = request.getRequestURL();
 		
-		String res = lastName.substring(33);
+		//String res = lastName.substring(33);
 				
 		User = request.getParameter("nomUser");
 		
 		
-		if(res.equals(null)) {
+		/* if(res.equals(null)) {
 			User = request.getParameter("nomUser");
 		} else {
 			User = res;
-		}
+		} */
 		
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 

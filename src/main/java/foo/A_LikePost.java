@@ -49,10 +49,10 @@ public class A_LikePost extends HttpServlet {
 		StringBuffer post = request.getRequestURL();
 		
 		//en local
-		String res = post.substring(31);
+		//String res = post.substring(31);
 		
 		//en ligne
-		//String res = post.substring(49);
+		String res = post.substring(49);
 		
 		Boolean trouve = false;
 		long idPost = Long.parseLong(res);

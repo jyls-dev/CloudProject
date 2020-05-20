@@ -45,10 +45,10 @@ public class A_CommentPost extends HttpServlet {
 		StringBuffer post = req.getRequestURL();
 		
 		// en local
-		String res = post.substring(34);
+		//String res = post.substring(34);
 		
 		//en ligne
-		//String res = post.substring(52);
+		String res = post.substring(52);
 
 		
 		Long res2 = Long.parseLong(res);

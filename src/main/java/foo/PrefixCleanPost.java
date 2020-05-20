@@ -47,10 +47,10 @@ public class PrefixCleanPost extends HttpServlet {
 	StringBuffer post = request.getRequestURL();
 	
 	//en local
-	String res = post.substring(38);
+	//String res = post.substring(38);
 
 	//en ligne
-	//String res = post.substring(56);
+	String res = post.substring(56);
 	
 	long dd = Long.parseLong(res);
 
