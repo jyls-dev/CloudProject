@@ -24,6 +24,8 @@
             <h1 style="color: white;"class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-1">
                 Bienvenue sur Cloud Tiny Gram<br><br></h1> <br><br>
                 
+                <h5> Membre du projet : Chauveau François, Vannini Jules, Remaud Remi, Oztoprak David</h5>
+                
             <div class="mbr-section-btn align-left"><a class="btn btn-md btn-primary display-4" href="/connexion">Se Connecter avec Google</a></div>
         
         </div>
